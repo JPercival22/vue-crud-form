@@ -3,11 +3,13 @@
     <div class="holder">
 
       <form @submit.prevent="addSkill">
-        <input type="text" placeholder="Enter a Skill that you have..." v-model="skill">
+        <input type="text" placeholder="Enter a Skill that you have..." v-model="skill"> 
         {{ skill }}
+        <!-- v-model is implicated here to capture the users input-->
       </form>
       <ul>
         <li v-for="(data, index) in skills" :key='index'>{{index}}. {{data.skills}}</li>
+        <!-- loops through the data and the index in skills array then interpolates the index and data into the skills table-->
       </ul>
       <p>These are the skills that you possess</p>
 
