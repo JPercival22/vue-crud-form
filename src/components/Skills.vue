@@ -2,9 +2,10 @@
   <div class="skills">
     <div class="holder">
 
-      <input type="text" placeholder="Enter a Skill that you have..." v-model="skill">
-      {{ skill }}
-
+      <form @submit.prevent="addSkill">
+        <input type="text" placeholder="Enter a Skill that you have..." v-model="skill">
+        {{ skill }}
+      </form>
       <ul>
         <li v-for="(data, index) in skills" :key='index'>{{index}}. {{data.skills}}</li>
       </ul>
@@ -26,6 +27,12 @@ export default {
         {"skills": "Front End Developer"},
         {"skills": "Vue.js"}
       ]
+    }
+  },
+  methods: {
+    addSkill() {
+      this.skills.push({skills: this.skill})
+      this.skill = '';
     }
   }
 }
@@ -67,7 +74,7 @@ export default {
     padding: 20px;
     font-size: 1.3em;
     background: #323333;
-    color: #687f7f;
+    color: #FFFFFF;
   }
 
 </style>
