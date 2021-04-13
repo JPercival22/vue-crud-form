@@ -45,5 +45,12 @@ nav a {
   color: rgb(0, 110, 255);
   font-weight: 700;
   margin-right: 15px;
+  border: 1px solid #fff;
+  transition: all .5s ease-in-out;
+}
+nav a:hover{
+  background: #dcdcdc;
+  color: #fff;
+  border-color: #fff;
 }
 </style>
